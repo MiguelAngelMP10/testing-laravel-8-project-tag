@@ -16,6 +16,13 @@
                 <input type="submit" value="Agregar" class="rounded-r px-8 bg-blue-500 text-white outline-none">
             </form>
             <h4 class="text-lg text-center mb-4">Listado de etiquetas</h4>
+            @if ($errors->any())
+                <ul class="list-none p-4 mb-4 bg-red-100 text-red-500">
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            @endif
             <table>
                 @forelse( $tags as $tag )
                     <tr>
